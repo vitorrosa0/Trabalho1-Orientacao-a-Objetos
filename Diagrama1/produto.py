@@ -37,4 +37,5 @@ class Produto:
 
 
     def __str__(self):
-        return f'**** ID Produto: {self.getId()}, Código {self.getCodigo()}, Descrição: {self.getDescricao()}'
+        itemNota_str = ', '.join([str(item) for item in self.getItemNota()])
+        return f'**** ID Produto: {self.getId()}, Código: {self.getCodigo()}, Descrição: {self.getDescricao()}, Itens de Nota: [{itemNota_str}]'

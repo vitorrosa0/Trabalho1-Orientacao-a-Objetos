@@ -47,4 +47,5 @@ class Empresa():
 
 
     def __str__(self):
-        return f'**** ID Empresa: {self.getId()}, Código {self.getCodigo()}, Razão Social: {self.getRazaoSocial()}, Endereço: {self.getEndereco()}, CNPJ: {self.getCnpj()}'
+        notas_str = ', '.join([str(nota) for nota in self.getNota()])
+        return f'**** ID Empresa: {self.getId()}, Código {self.getCodigo()}, Razão Social: {self.getRazaoSocial()}, Endereço: {self.getEndereco()}, CNPJ: {self.getCnpj()}, Nota: [{notas_str}]'

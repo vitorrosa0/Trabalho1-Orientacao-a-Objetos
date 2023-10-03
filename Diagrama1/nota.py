@@ -1,6 +1,7 @@
 from empresa import Empresa
-from itemNota import ItemNota
+
 from datetime import date, datetime, time
+from participante import Participante
 
 class Nota:
 
@@ -8,8 +9,8 @@ class Nota:
         self.__id = 0
         self.__data = None
         self.__numero = 0
-        self.__empresa = None
-        self.__participante = None
+        self.__empresa = Empresa()
+        self.__participante = Participante()
         self.__itemNota = []
 
 
@@ -62,4 +63,5 @@ class Nota:
 
 
     def __str__(self):
-        return f'**** ID Nota: {self.getId()}, Data: {datetime.strftime(self.getData(), " %d-%m-%Y ")}, Número: {str(self.getNumero())}, VrTotal: R${self.getVrTotal()}'
+        itemNota_str = ', '.join([str(item) for item in self.getItemNota()])
+        return f'**** ID Nota: {self.getId()}, Data: {datetime.strftime(self.getData(), " %d-%m-%Y ")}, Número: {str(self.getNumero())}, VrTotal: R${self.getVrTotal()}, Empresa: {self.getEmpresa().getId()}, Participante: {self.getParticipante().getId()}, Itens de Nota: [{itemNota_str}]'

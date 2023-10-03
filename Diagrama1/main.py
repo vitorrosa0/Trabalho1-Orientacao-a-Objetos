@@ -24,8 +24,7 @@ if __name__ == '__main__':
     e2.setEndereco('Rua Y')
     e2.setCnpj('444444')
 
-    print("Empresa 1:")
-    print(e1.__str__())
+    
 
 
     # Nota 1:
@@ -52,27 +51,22 @@ if __name__ == '__main__':
     n4.setData(datetime.strptime('01/09/2002', '%d/%m/%Y'))
     n4.setNumero(21)
 
-    print()
-    print("Nota 1:")
-    print(n1.__str__())
+    
 
     # Adionando as notas à empresa relacionada:
     e1.addNota(n1)
-    e1.addNota(n2)
-    e2.addNota(n3)
-    e2.addNota(n4)
-
-    print()
-    print("Lista de notas na Empresa 1:")
-    for n in e1.getNota():
-        print(n)
+    n1.setEmpresa(e1)
+    e2.addNota(n2)
+    n2.setEmpresa(e2)
+    
+    
 
     # Item Nota 1:
     iN1 = ItemNota()
     iN1.setId(1)
     iN1.setVrUnitario(1.5)
     iN1.setQuantidade(2)
-    print(iN1.__str__())
+    
 
     # Item Nota 2:
     iN2 = ItemNota()
@@ -93,9 +87,7 @@ if __name__ == '__main__':
     iN4.setQuantidade(2)
 
 
-    print()
-    print("Item Nota1:")
-    print(iN1.__str__())
+    
 
     # Produto 1:
     pr1 = Produto()
@@ -121,30 +113,20 @@ if __name__ == '__main__':
     pr4.setCodigo('D1')
     pr4.setDescricao('Damasco')
 
-    print()
-    print("Produto:")
-    print(pr1.__str__())
+    
 
     pr1.addItemNota(iN1)
+    iN1.setProduto(pr1)
     pr2.addItemNota(iN2)
+    iN2.setProduto(pr2)
     pr3.addItemNota(iN3)
+    iN3.setProduto(pr3)
     pr4.addItemNota(iN4)
+    iN4.setProduto(pr4)
 
-    print()
-    print("Lista de itens nota nos Produtos:\n")
-    print("Lista de itens nota no Produto 1:")
-    for pr in pr1.getItemNota():
-        print(pr)
+    
 
-    print("Lista de itens nota no Produto 2:")
-    for pr in pr2.getItemNota():
-        print(pr)
-    print("Lista de itens nota no Produto 3:")
-    for pr in pr3.getItemNota():
-        print(pr)
-    print("Lista de itens nota no Produto 4:")
-    for pr in pr4.getItemNota():
-        print(pr)
+    
 
     # Participante 1:
     p1 = Participante()
@@ -174,54 +156,60 @@ if __name__ == '__main__':
     p4.setRazaoSocial('Tchau')
     p4.setCnpj('32857298572')
 
-    print()
-    print("Participante:")
-    print(p1.__str__())
+    
 
     p1.addNota(n1)
+    n1.setParticipante(p1)
     p2.addNota(n2)
+    n2.setParticipante(p2)
     p3.addNota(n3)
+    n3.setParticipante(p3)
     p4.addNota(n4)
+    n4.setParticipante(p4)
 
-    print()
-    print("Lista de notas dos Participantes:\n")
-    print("Lista de notas do Participante 1:")
-    for p in p1.getNota():
-        print(p)
-    print("Lista de nota do Participante 2:")
-    for p in p2.getNota():
-        print(p)
-    print("Lista de nota do Participante3:")
-    for p in p3.getNota():
-        print(p)
-    print("Lista de nota do Participante4:")
-    for p in p4.getNota():
-        print(p)
+    
 
     #Notas da empresa1:
     n1.addItemNota(iN1)
+    iN1.setNota(n1)
     n2.addItemNota(iN2)
+    iN2.setNota(n1)
     #Notas da empresa2:
     n3.addItemNota(iN3)
+    iN3.setNota(n3)
     n4.addItemNota(iN4)
+    iN4.setNota(n4)
 
 
     n_e1 = e1.getNota()
     n_e2 = e2.getNota()
 
+    
+    
+    
+    
+    ###################
+    
+    print("Empresa 1:")
+    print(e1.__str__())
+    
     print()
-    print("Notas da empresa: \n")
+    print("Nota 1:")
+    print(n1.__str__())
 
-    print("Notas da empresa 1: ")
-    for n in n_e1:
-        print(
-            n.__str__()
-        )
-    print("\n")
-
-    print("Notas da empresa 2: ")
-    for n in n_e2:
-        print(
-            n.__str__()
-        )
-    print("\n")
+    print()
+    print('Participante 1:')
+    print(p1.__str__())
+    
+        
+    print()
+    print("Item Nota1:")
+    print(iN1.__str__())
+    
+    
+    print()
+    print("Produto:")
+    print(pr1.__str__())
+    
+    
+    

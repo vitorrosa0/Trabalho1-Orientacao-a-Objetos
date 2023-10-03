@@ -1,3 +1,6 @@
+from produto import Produto
+from nota import Nota
+
 class ItemNota:
 
     def __init__(self):
@@ -5,8 +8,8 @@ class ItemNota:
         self.__id = 0
         self.__vrUnitario = 0
         self.__quantidade = 0
-        self.__produto = None
-        self.__nota = None
+        self.__produto = Produto()
+        self.__nota = Nota()
 
 
     def setId(self,id):
@@ -40,4 +43,4 @@ class ItemNota:
 
 
     def __str__(self):
-        return f'**** ID Item Nota : {self.getId()}, Valor Unitário: {self.getVrUnitario()}, Quantidade: {self.getQuantidade()}' 
+        return f'**** ID Item Nota : {self.getId()}, Valor Unitário: {self.getVrUnitario()}, Quantidade: {self.getQuantidade()}, Produto: {self.getProduto().getId()}, Nota ID: {self.getNota().getId()}'
