@@ -6,7 +6,7 @@ class Aluno(Pessoa):
         self.__matricula = ""
         self.__anoInicio = 0
         self.__semestreInicio = 0
-        self.__situacao = None
+        self.__situacao = Situacao()
         self.__diario = []
 
     

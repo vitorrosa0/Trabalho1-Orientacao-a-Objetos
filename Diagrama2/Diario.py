@@ -9,8 +9,8 @@ class Diario:
         self.__vS = 0.0
         self.__vT = 0.0
         self.__faltas = 0
-        self.__aluno = None
-        self.__turma = None
+        self.__aluno = Aluno()
+        self.__turma = Turma()
 
 
     def setV1(self, v1):

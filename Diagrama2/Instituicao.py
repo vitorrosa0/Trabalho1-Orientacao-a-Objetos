@@ -1,4 +1,4 @@
-from Turma import Turma
+
 
 class Instituicao:
     def __init__(self):

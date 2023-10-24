@@ -1,5 +1,6 @@
 from Professor import Professor
 from Disciplina import Disciplina
+from Instituicao import Instituicao
 
 
 class Turma:
@@ -10,9 +11,9 @@ class Turma:
         self.__descricao = " "
         self.__ano = 0
         self.__semestre = 0
-        self.__professor = None
-        self.__instituicao = None
-        self.__disciplina = None
+        self.__professor = Professor()
+        self.__instituicao = Instituicao()
+        self.__disciplina = Disciplina()
         self.__diario = []
 
 

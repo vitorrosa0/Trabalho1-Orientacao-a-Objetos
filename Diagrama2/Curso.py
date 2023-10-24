@@ -1,4 +1,4 @@
-from Turma import Turma
+
 
 class Curso:
     def __init__(self):

@@ -1,10 +1,10 @@
-
+from Curso import Curso
 
 class Disciplina:
     def __init__(self):
         self.__id = 0
         self.__descricao = " "
-        self.__curso = None
+        self.__curso = Curso()
         self.__turma = []
 
     def setId(self, id):

@@ -40,9 +40,7 @@ def principal():
     pa2.setAnoInicio(2023)
     pa2.setSemestreInicio(1)
 
-    print("Aluno 1:")
-    print(pa1.__str__())
-
+    
     # Dados da Situação:
     s = Situacao()
     s.setSituacao('Inscrito')
@@ -52,14 +50,7 @@ def principal():
     s.addAluno(pa1)
     s.addAluno(pa2)
 
-    # Lista da Alunos nessa situação:
-    print()
-    print("Situação do Aluno:")
-    print(s.__str__())
-    print()
-    print("Lista de Alunos nessa situação:")
-    for sit in s.getAluno():
-        print(sit)
+    
 
     # Dados do Diario 1:
     d1 = Diario()
@@ -81,15 +72,7 @@ def principal():
     pa1.addDiario(d1)
     pa2.addDiario(d2)
 
-    # Print dos Diarios dos Alunos:
-    print()
-    print("Diário dos Alunos:\n")
-    print(' - Diário do Aluno 1:')
-    for pa in pa1.getDiario():
-        print(pa)
-    print(' - Diário do Aluno 2:')
-    for pa in pa2.getDiario():
-        print(pa)
+    
     
     # Dados da Turma 1:
     t1 = Turma()
@@ -112,43 +95,27 @@ def principal():
     t3.setAno(1)
     t3.setSemestre(2)
     
-    print()
-    print("Informações da Turma 1:")
-    print(t1.__str__())
+    
 
     # Adicionando um Diário a uma Turma:
     t1.addDiario(d1)
     t2.addDiario(d2)
 
-    # Print dos Diarios das Turmas:
-    print()
-    print('Lista de diarios da Turma:\n')
-    print('Diario do Aluno 1:')
-    for t in t1.getDiario():
-        print(t)
-    print('Diario do Aluno 2:')
-    for t in t2.getDiario():
-        print(t)
+    
 
     # Dados de Instituição:
     i = Instituicao()
     i.setId(9829479)
     i.setDescricao('Uniacademia')
 
-    print()
-    print("Instituição:")
-    print(i.__str__())
+    
 
     # Adicionando as Turma a uma Instituição:
     i.addTurma(t1)
     i.addTurma(t2)
     i.addTurma(t3)
 
-    # Print das Turmas de uma Instituição:
-    print()
-    print('Lista de turmas da instituição:')
-    for inst in i.getTurma():
-        print(inst)
+    
 
     # Dados de Disciplina 1:
     disc1 = Disciplina()
@@ -165,21 +132,13 @@ def principal():
     disc3.setId(387837929)
     disc3.setDescricao('Desenvolvimento de Web Sites')
     
-    print()
-    print('Disciplina 1:')
-    print(disc1.__str__())
-
+   
     # Adicionando as Turmas a uma Disciplina:
     disc1.addTurma(t1)
     disc1.addTurma(t2)
     disc1.addTurma(t3)
     
-    # Print das Turmas de uma Disciplinas:
-    print()
-    print('Lista de turmas na disciplina 1:')
-    for di in disc1.getTurma():
-        print(di)
-
+    
     # Dados da Pessoa 1(Professor):
     pp1 = Professor()
     pp1.setId(2)
@@ -206,19 +165,13 @@ def principal():
     pp2.setMatricula('Ativo')
     pp2.setTitulocaoMaxima('Doutor')
 
-    print()
-    print("Professor 1:")
-    print(pp1.__str__())
+    
 
     # Adicionando um Diário a um Professor:
     pp1.addTurma(t1)
     pp1.addTurma(t2)
 
-    # Print da lista de turmas de um Professor:
-    print()
-    print('Lista de turmas do Professor 1:')
-    for pp in pp1.getTurma():
-        print(pp)
+    
     
     # Dados do Curso 1:
     c1 = Curso()
@@ -230,14 +183,98 @@ def principal():
     c2.setId(43857398)
     c2.setDescricao('BSI')
 
-    print()
-    print('Informações do Curso 1')
-    print(c1.__str__())
+    
 
     # Adicionando as Disciplinas a um Curso:
     c1.addDisciplina(disc1)
     c1.addDisciplina(disc2)
     c1.addDisciplina(disc3)
+
+    
+
+    # Adicionando Professores a um Curso:
+    c1.addProfessor(pp1)
+    c1.addProfessor(pp2)
+
+    
+        
+    # Adicionando Curos a um Professor:
+    pp1.addCurso(c1)
+    pp1.addCurso(c2)
+
+    
+
+    #####################
+
+    print("Aluno 1:")
+    print(pa1.__str__())
+
+    # Lista da Alunos nessa situação:
+    print()
+    print("Situação do Aluno:")
+    print(s.__str__())
+    print()
+    print("Lista de Alunos nessa situação:")
+    for sit in s.getAluno():
+        print(sit)
+
+    # Print dos Diarios dos Alunos:
+    print()
+    print("Diário dos Alunos:\n")
+    print(' - Diário do Aluno 1:')
+    for pa in pa1.getDiario():
+        print(pa)
+    print(' - Diário do Aluno 2:')
+    for pa in pa2.getDiario():
+        print(pa)
+
+    print()
+    print("Informações da Turma 1:")
+    print(t1.__str__())
+
+    # Print dos Diarios das Turmas:
+    print()
+    print('Lista de diarios da Turma:\n')
+    print('Diario do Aluno 1:')
+    for t in t1.getDiario():
+        print(t)
+    print('Diario do Aluno 2:')
+    for t in t2.getDiario():
+        print(t)
+
+    print()
+    print("Instituição:")
+    print(i.__str__())
+
+    # Print das Turmas de uma Instituição:
+    print()
+    print('Lista de turmas da instituição:')
+    for inst in i.getTurma():
+        print(inst)
+
+    print()
+    print('Disciplina 1:')
+    print(disc1.__str__())
+
+    # Print das Turmas de uma Disciplinas:
+    print()
+    print('Lista de turmas na disciplina 1:')
+    for di in disc1.getTurma():
+        print(di)
+
+    print()
+    print("Professor 1:")
+    print(pp1.__str__())
+    
+    # Print da lista de turmas de um Professor:
+    print()
+    print('Lista de turmas do Professor 1:')
+    for pp in pp1.getTurma():
+        print(pp)
+
+    print()
+    print('Informações do Curso 1')
+    print(c1.__str__())
 
     # Print das disciplinas do Curso 1:
     print()
@@ -245,26 +282,22 @@ def principal():
     for c in c1.getDisciplina():
         print(c)
 
-    # Adicionando Professores a um Curso:
-    c1.addProfessor(pp1)
-    c1.addProfessor(pp2)
 
     # Print dos Professores do Curso 1:
     print()
     print('Professores no Curso 1:')
     for c in c1.getProfessor():
         print(c)
-        
-    # Adicionando Curos a um Professor:
-    pp1.addCurso(c1)
-    pp1.addCurso(c2)
 
     # Print dos cursos do Professor 1:
     print()
     print('Cursos do Professor 1:')
     for pp in pp1.getCurso():
         print(pp)
-    
+
+
+
+
 
 if __name__ == '__main__':
     principal()
