@@ -8,7 +8,7 @@ class Funcionario(Pessoa):
     def __init__(self):
         self.__cargo = Cargo()
         self.__ocorrencia = []
-        self.__dependente = []
+        self.__dependentes = []
 
     def setCargo (self, cargo):
         self.__cargo = cargo
@@ -24,14 +24,14 @@ class Funcionario(Pessoa):
     def getOcorrencia(self):
         return self.__ocorrencia
     
-    def setDependente(self, dependente):
-        self.__dependente = dependente
+    def setDependentes(self, dependentes):
+        self.__dependentes = dependentes
     def addDependente(self, dependente):
-        self.__dependente.append(dependente)
+        self.__dependentes.append(dependente)
     def removeDependente(self, dependente):
-        self.__dependente.remove(dependente)
-    def getDependente(self):
-        return self.__dependente
+        self.__dependentes.remove(dependente)
+    def getDependentes(self):
+        return self.__dependentes
 
 
 
@@ -42,7 +42,7 @@ class Funcionario(Pessoa):
 
         # Calcular idade dos dependentes
         data_referencia = datetime(ano, mes, 1).date()
-        for dependente in self.__dependente:
+        for dependente in self.__dependentes:
             data_nascimento_dependente = dependente.getDataNascimento()
             idade_dependente = (data_referencia.year - data_nascimento_dependente.year)- ((data_referencia.month, data_referencia.day) < (data_nascimento_dependente.month, data_nascimento_dependente.day))
             if idade_dependente < 18:
@@ -63,7 +63,7 @@ class Funcionario(Pessoa):
         print("Dependentes do Funcionário", self.getNome())
         data_referencia = datetime.now().date()
         
-        for dependente in self.__dependente:
+        for dependente in self.__dependentes:
             nome_dependente = dependente.getNome()
             data_nascimento = dependente.getDataNascimento()
             idade_dependente = (data_referencia.year - data_nascimento.year) - ((data_referencia.month, data_referencia.day) < (data_nascimento.month, data_nascimento.day))            
