@@ -16,22 +16,24 @@ if __name__ == '__main__':
     carro1.setValor(100.0)
     
     carro2 = Carro()
-    carro1.setModelo("Uno")
-    carro1.setPlaca("XYZ123")
-    carro1.setValor(80.0)
+    carro2.setModelo("Uno")
+    carro2.setPlaca("XYZ123")
+    carro2.setValor(80.0)
 
     moto1 = Moto()
     moto1.setPlaca("MOT123")
     moto1.setValor(40.0)
 
     moto2 = Moto()
-    moto1.setPlaca("MOT234")
-    moto1.setValor(50.0)
+    moto2.setPlaca("MOT234")
+    moto2.setValor(50.0)
 
     print(carro1.alugar(cliente1,10))
     print(carro1.alugar(cliente1,10))
     print(carro1.devolver())
-    print(carro1.alugar(cliente2,15))
-
+    print(carro2.alugar(cliente2,15))
+    print()
+    carro1.listarHistorico()
+    
     
     

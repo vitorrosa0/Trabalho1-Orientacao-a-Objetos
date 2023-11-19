@@ -8,6 +8,7 @@ class Veiculo:
         self.__valor = 0.0
         self.__cliente = Cliente()
         self.__alugado = bool
+        self.__historico = []
 
     def setPlaca(self,placa):
         self.__placa = placa
@@ -62,4 +63,4 @@ class Veiculo:
         else:
             print(f"Histórico do veículo de placa {self.__placa}:")
             for registro in self.__historico:
-                print(registro)
+                print(f"{registro.getCliente().getNome()} {registro}")
